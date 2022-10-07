@@ -5,10 +5,13 @@
 
 This app allows to set Slack status to predefined values from a command line, for multiple accounts at once:
 ```shell
-slack-status lunch
+slack-status set lunch
 ```
 
 This will set yourself away for an hour, with an hamburger emoji and "Lunch" status text.
+
+*Note*: you could be prompted to give Keychain access to Chrome storage. This is one-time only request, and it's required
+because `slack-status` scrapes Slack cookies from your browser, and uses that cookie to set status on your behalf.
 
 ## How to
 
