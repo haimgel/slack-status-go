@@ -1,0 +1,22 @@
+# List of accounts you wish to control. `slack-status` will scrape the cookie from your browser, so you don't need
+# to configure anything besides the name of the team. The name of the team the part before .slack.com, e.g. if your
+# Slack team is at https://team1.slack.com/, put just "team1" in this list.
+accounts:
+  - team1
+  - team2
+  - team3
+# Pre-define statuses you want to set with this app. Be sure to quote the emoji name. Duration uses Go duration notation,
+# e.g. 60m is 60 minutes.
+statuses:
+  - name: lunch
+    emoji: ':hamburger:'
+    text: Lunch
+    duration: 60m
+  - name: call
+    emoji: ':phone:'
+    text: In a call
+    duration: 60m
+  - name: brb
+    emoji: ':brb:'
+    text: BRB
+    duration: 60m
