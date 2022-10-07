@@ -126,6 +126,9 @@ func (app *Application) loadConfig() error {
 			return fmt.Errorf("account '%s' is not defined", acc)
 		}
 	}
+	if len(app.accounts) == 0 {
+		app.accounts = app.config.Accounts
+	}
 	return nil
 }
 
