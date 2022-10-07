@@ -1,4 +1,7 @@
 ## SlackStatus - set Slack status for multiple accounts
+[![Release](https://img.shields.io/github/release/haimgel/slack-status-go.svg?style=flat)](https://github.com/haimgel/slack-status-go/releases/latest)
+[![Software license](https://img.shields.io/github/license/haimgel/slack-status-go.svg?style=flat)](/LICENSE)
+[![Build status](https://img.shields.io/github/workflow/status/haimgel/slack-status-go/release.svg?style=flat)](https://github.com/haimgel/slack-status-go/actions?workflow=release)
 
 This app allows to set Slack status to predefined values from a command line, for multiple accounts at once:
 ```shell

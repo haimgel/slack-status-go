@@ -1,0 +1,58 @@
+project_name: slack-status
+before:
+  hooks:
+    - go mod tidy
+    - go generate ./...
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    mod_timestamp: '{{ .CommitTimestamp }}'
+    flags:
+      - -trimpath
+    ldflags:
+      # Disables debug symbols (-s, -w), passes version information
+      - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{ .CommitDate }}
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      386: i386
+      amd64: x86_64
+universal_binaries:
+  - replace: true
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+release:
+  github:
+    owner: haimgel
+    name: slack-status-go
+brews:
+  - tap:
+      owner: haimgel
+      name: homebrew-tools
+    name: slack-status
+    homepage: "https://github.com/haimgel/slack-status-go"
+    url_template: "https://github.com/haimgel/slack-status-go/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    description: "Set Slack status to predefined values from a command line."
+    folder: Formula
+    install: |
+      bin.install "slack-status"
+    test: |
+      assert_match /Set Slack status/, shell_output("#{bin}/slack-status -h", 0)
+
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# vim: set ts=2 sw=2 tw=0 fo=cnqoj
