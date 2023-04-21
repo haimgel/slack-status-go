@@ -18,12 +18,6 @@ builds:
     ldflags:
       # Disables debug symbols (-s, -w), passes version information
       - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{ .CommitDate }}
-archives:
-  - replacements:
-      darwin: Darwin
-      linux: Linux
-      386: i386
-      amd64: x86_64
 universal_binaries:
   - replace: true
 checksum:
