@@ -1,6 +1,6 @@
 module github.com/haimgel/slack-status
 
-go 1.18
+go 1.20
 
 require (
 	github.com/slack-go/slack v0.11.3
