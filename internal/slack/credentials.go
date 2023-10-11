@@ -12,7 +12,7 @@ import (
 )
 
 // Slack _needs_ user agent pretending to be Chrome, otherwise it does not give back a token
-const fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+const fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
 
 func GetDCookie() (*http.Cookie, error) {
 	cookies := kooky.ReadCookies(kooky.Valid, kooky.DomainHasSuffix(`slack.com`), kooky.Name("d"))
