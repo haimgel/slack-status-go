@@ -12,15 +12,15 @@ jobs:
         with:
           fetch-depth: 0
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v4
         with:
-          go-version: '^1.20.0'
+          go-version: '^1.21.3'
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v3
+        uses: goreleaser/goreleaser-action@v5
         with:
           distribution: goreleaser
-          version: 1.17.2
-          args: release --rm-dist
+          version: 1.21.2
+          args: release --clean
         env:
           # This needs write access to the brew tap repo
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}

@@ -2,10 +2,9 @@ package slack
 
 import (
 	"fmt"
-	"github.com/zellyn/kooky"
-	_ "github.com/zellyn/kooky/browser/all" // register cookie store finders!
+	"github.com/browserutils/kooky"
+	_ "github.com/browserutils/kooky/browser/all" // register cookie store finders!
 	"io"
-	"io/ioutil"
 	"net/http"
 	"regexp"
 	"sort"
@@ -51,7 +50,7 @@ func ScrapeToken(team string, dCookie *http.Cookie) (string, error) {
 		_ = Body.Close()
 	}(resp.Body)
 
-	html, err := ioutil.ReadAll(resp.Body)
+	html, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", err
 	}
