@@ -217,14 +217,7 @@ func (app *Application) parseStatus(status string) (*StatusConfig, error) {
 			return config, nil
 		}
 	}
-	return nil, fmt.Errorf("status '%s' is not found in the configuration")
-}
-
-func (app *Application) checkError(err error, code int) {
-	if err != nil {
-		_, _ = fmt.Fprintf(os.Stderr, "Error: %s\n", err)
-		app.exit(code)
-	}
+	return nil, fmt.Errorf("status '%s' is not found in the configuration", status)
 }
 
 func defaultConfigFilePath() string {
