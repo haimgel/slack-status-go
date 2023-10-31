@@ -5,10 +5,10 @@ import (
 	"github.com/haimgel/slack-status/internal/slack"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"golang.org/x/exp/slices"
 	"net/http"
 	"os"
 	"path/filepath"
+	"slices"
 	"time"
 )
 
