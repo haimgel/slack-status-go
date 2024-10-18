@@ -35,14 +35,14 @@ release:
     owner: haimgel
     name: slack-status-go
 brews:
-  - tap:
+  - repository:
       owner: haimgel
       name: homebrew-tools
     name: slack-status
     homepage: "https://github.com/haimgel/slack-status-go"
     url_template: "https://github.com/haimgel/slack-status-go/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     description: "Set Slack status to predefined values from a command line."
-    folder: Formula
+    directory: Formula
     install: |
       bin.install "slack-status"
     test: |
