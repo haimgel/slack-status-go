@@ -10,8 +10,8 @@ import (
 	"sort"
 )
 
-// Slack _needs_ user agent pretending to be Chrome, otherwise it does not give back a token
-const fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+// Slack _needs_ user agent pretending to be Chrome, otherwise, it does not give back a token
+const fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
 
 func GetDCookie() (*http.Cookie, error) {
 	cookies := kooky.ReadCookies(kooky.Valid, kooky.DomainHasSuffix(`slack.com`), kooky.Name("d"))
@@ -27,7 +27,7 @@ func GetDCookie() (*http.Cookie, error) {
 }
 
 func ScrapeToken(team string, dCookie *http.Cookie) (string, error) {
-	// Just a page where token is exposed as part of JSON in the page body itself
+	// Just a page where the token is exposed as part of JSON in the page body itself
 	teamUrl := fmt.Sprintf("https://%s.slack.com/customize/emoji", team)
 
 	req, err := http.NewRequest("GET", teamUrl, nil)
@@ -55,7 +55,7 @@ func ScrapeToken(team string, dCookie *http.Cookie) (string, error) {
 		return "", err
 	}
 	// Find the API token in the page body
-	re := regexp.MustCompile(`"api_token":"(xo[^"]+)"`)
+	re := regexp.MustCompile(`"api_token":\s*"(xo[^"]+)"`)
 	match := re.FindSubmatch(html)
 	if match == nil {
 		return "", fmt.Errorf("token is not found in the HTML body")
