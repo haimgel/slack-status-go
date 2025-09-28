@@ -22,20 +22,6 @@ updates:
     labels:
       - "dependencies"
 
-  - package-ecosystem: "docker"
-    directory: "/"
-    assignees:
-      - "haimgel"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    commit-message:
-      prefix: "deps"
-    cooldown:
-      default-days: 7
-    labels:
-      - "dependencies"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     assignees:

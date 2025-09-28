@@ -2,15 +2,11 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(curl -s https://go.dev/doc/devel/release)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(docker build:*)",
-      "Bash(docker pull:*)",
-      "Bash(crane ls:*)",
       "Bash(go build:*)",
-      "Bash(./mqtt2cmd-local --help)",
-      "Bash(./mqtt2cmd-local --version)"
+      "Bash(go get:*)",
+      "Bash(go mod:*)"
     ],
     "deny": [],
     "ask": []
