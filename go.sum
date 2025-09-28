@@ -1,5 +1,3 @@
-github.com/DP19/kooky v0.2.3 h1:t8og3tnbHqZ2/7//85FbL9Wd0alQX/CNpPvD/qgWBc8=
-github.com/DP19/kooky v0.2.3/go.mod h1:Ls7BAtUgrzzi5AfD1T4CqDu7mhHAaGMwCx6kH2nnjHI=
 github.com/Velocidex/json v0.0.0-20220224052537-92f3c0326e5a h1:AeXPUzhU0yhID/v5JJEIkjaE85ASe+Vh4Kuv1RSLL+4=
 github.com/Velocidex/json v0.0.0-20220224052537-92f3c0326e5a/go.mod h1:ukJBuruT9b24pdgZwWDvOaCYHeS03B7oQPCUWh25bwM=
 github.com/Velocidex/ordereddict v0.0.0-20220107075049-3dbe58412844/go.mod h1:Y5Tfx5SKGOzkulpqfonrdILSPIuNg+GqKE/DhVJgnpg=
