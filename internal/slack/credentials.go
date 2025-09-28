@@ -1,6 +1,7 @@
 package slack
 
 import (
+	"context"
 	"fmt"
 	"github.com/browserutils/kooky"
 	_ "github.com/browserutils/kooky/browser/all" // register cookie store finders!
@@ -14,7 +15,10 @@ import (
 const fakeUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
 
 func GetDCookie() (*http.Cookie, error) {
-	cookies := kooky.ReadCookies(kooky.Valid, kooky.DomainHasSuffix(`slack.com`), kooky.Name("d"))
+	cookies, err := kooky.ReadCookies(context.Background(), kooky.Valid, kooky.DomainHasSuffix(`slack.com`), kooky.Name("d"))
+	if err != nil {
+		return nil, fmt.Errorf("failed to read cookies: %w", err)
+	}
 	// Sort found cookies by expiry date, in reverse, to get the most "fresh" cookie
 	sort.Slice(cookies, func(i, j int) bool {
 		return cookies[i].Expires.After(cookies[j].Expires)
