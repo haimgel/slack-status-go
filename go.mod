@@ -3,7 +3,7 @@ module github.com/haimgel/slack-status
 go 1.25
 
 require (
-	github.com/browserutils/kooky v0.2.4
+	github.com/browserutils/kooky v0.2.3
 	github.com/slack-go/slack v0.17.3
 	github.com/spf13/cobra v1.10.1
 	github.com/spf13/viper v1.21.0
@@ -40,3 +40,7 @@ require (
 
 // Use a patched version because the official one does not support XOXC tokens: https://github.com/slack-go/slack/issues/996
 replace github.com/slack-go/slack => github.com/rusq/slack v0.12.0
+
+// Fix for Chrome 130 support: https://github.com/browserutils/kooky/issues/89
+// No yet fixed in Kooky as of 2025-09-28
+replace github.com/browserutils/kooky => github.com/DP19/kooky v0.2.3
