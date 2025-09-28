@@ -43,6 +43,8 @@ brews:
     homepage: "https://github.com/haimgel/slack-status-go"
     url_template: "https://github.com/haimgel/slack-status-go/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     description: "Set Slack status to predefined values from a command line."
+    custom_block: |
+        sigstore :default
     directory: Formula
     install: |
       bin.install "slack-status"
