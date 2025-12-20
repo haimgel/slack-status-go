@@ -5,7 +5,7 @@ go 1.25
 require (
 	github.com/browserutils/kooky v0.2.3
 	github.com/slack-go/slack v0.17.3
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
 )
 
