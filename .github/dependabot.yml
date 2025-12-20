@@ -8,7 +8,7 @@ updates:
     assignees:
       - "haimgel"
     schedule:
-      interval: "weekly"
+      interval: "semiannually"
     open-pull-requests-limit: 10
     commit-message:
       prefix: "deps"
@@ -27,7 +27,7 @@ updates:
     assignees:
       - "haimgel"
     schedule:
-      interval: "weekly"
+      interval: "semiannually"
     open-pull-requests-limit: 10
     cooldown:
       default-days: 7
